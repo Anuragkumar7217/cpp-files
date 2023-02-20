@@ -12,38 +12,16 @@
 #include <iostream>
 using namespace std;
 
-#define xyz 10
-
-// C++ program to show how many times
-// Constructors and destructors are called
-#include <iostream>
-using namespace std;
-
-class Test {
-	static int count;
-	int id;
-    public:
-	Test(){
-		count++;
-		id = count;
-		cout << "Constructing object number " << id << endl;
-		if (id == 4)
-			throw 4;
-	}
-	~Test(){
-		cout << "Destructing object number " << id << endl;
-	}
-};
-
-int Test::count = 0;
-
 int main(){
-	try {
-		Test array[5];
-	}
-	catch (int i) {
-		cout << "Caught " << i << endl;
-	}
+    cout << "Enter THe rool number : ";
+    int rollNo;
+    cin >> rollNo;
+    if(rollNo<=5) cout << "Monday";
+    else if(rollNo<=10) cout << "Tuesday";
+    else if(rollNo<=15) cout << "Wednesday";
+    else if(rollNo<=20) cout << "Thursday";
+    else if(rollNo<=25) cout << "Friday";
+    else if(rollNo<=30) cout << "Saturday";
 }
 
 
