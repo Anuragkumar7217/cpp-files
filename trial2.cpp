@@ -5,8 +5,10 @@ class node{
     public:
     int data;
     node *next;
+    node *prev;
     node(int d){
         data=d;
+        prev=NULL;
         next=NULL;
     }
 };
@@ -15,15 +17,16 @@ node* takeInput(){
     int d;
     cin >> d;
     node *head=NULL;
-    node *tail=NULL;
+    node *n=NULL;
     while(d!=-1){
-        node *n=new node(d);
+        node *temp=new node(d);
         if(head==NULL){
-            head=n;
-            tail=n;
+            head=temp;
+            n=temp;
         }else{
-            tail->next=n;
-            tail=n;
+            temp->prev=n;
+            n->next=temp;
+            n=temp;
         }
         cin >> d;
     }
@@ -42,12 +45,21 @@ void insertAtEnd(node *head, int d){
     head->next=n;
 }
 
+void reverseList(node *head){
+    if(head==NULL) return;
+    reverseList(head->next);
+    cout << head->data << ' ';
+}
+
 int main(){
+    cout << "Enter the elements of the Linked List : ";
     node *head=takeInput();
     printList(head);
-    cout << endl;
-    int d;
-    cin >> d;
-    insertAtEnd(head, d);
-    printList(head);
+    // cout << endl << "Enter the new node to be added at the end of the Linked List : ";
+    // int d;
+    // cin >> d;
+    // insertAtEnd(head, d);
+
+    // cout << endl << "Reverse Linked List is : ";
+    // reverseList(head);
 }

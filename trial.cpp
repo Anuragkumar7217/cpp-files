@@ -12,18 +12,8 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    cout << "Enter THe rool number : ";
-    int rollNo;
-    cin >> rollNo;
-    if(rollNo<=5) cout << "Monday";
-    else if(rollNo<=10) cout << "Tuesday";
-    else if(rollNo<=15) cout << "Wednesday";
-    else if(rollNo<=20) cout << "Thursday";
-    else if(rollNo<=25) cout << "Friday";
-    else if(rollNo<=30) cout << "Saturday";
+int main() {
 }
-
 
 
 
