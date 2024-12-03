@@ -36,9 +36,7 @@ void helper(int input[], int si, int ei){
 
 void quickSort(int input[], int n){
     if(n==0 || n==1) return;
-    int si=0;
-    int ei=n-1;
-    helper(input,si,ei);
+    helper(input,0,n-1);
 }
 
 int main(){

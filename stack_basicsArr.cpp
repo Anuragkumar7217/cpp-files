@@ -45,7 +45,7 @@ class stackArr{
     int size(){
         return ni;
     }
-    bool empty(){
+    bool isEmpty(){
         return ni==0;
     }
 };
@@ -66,5 +66,5 @@ int main(){
     
     cout << s.size() << endl;
     
-    cout << s.empty() << endl;
+    cout << s.isEmpty() << endl;
 }

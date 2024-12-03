@@ -23,13 +23,8 @@ int main(){
     for(int i=0; i<n; i++){
         cin >> a[i];
     }
-    int t;
-    cout << "Enter the no. test cases: ";
-    cin >> t;
-    while(t-->0){
-        int x;
-        cout << "Enter the no. to be searched: ";
-        cin >> x;
-        cout << binarysearch(a,n,x) << endl;;
-    }
+    int x;
+    cout << "Enter the no. to be searched: ";
+    cin >> x;
+    cout << binarysearch(a,n,x) << endl;;
 }

@@ -6,6 +6,9 @@ int main()
 	c=a+b;
 	cout<<"D value is " <<c <<endl;
 
+	int n=5;
+    int *input=new int[n];
+
 	char single='A';
 	cout<<single <<endl;
 

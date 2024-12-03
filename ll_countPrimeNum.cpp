@@ -5,9 +5,8 @@ class node{
     public:
     int data;
     node *next;
-    
-    node(int data){
-        this->data=data;
+    node(int d){
+        data=d;
         next=NULL;
     }
 };
@@ -21,7 +20,7 @@ node* takeinput(){
         node *n=new node(data);
         if(head==NULL){
             head=n;
-            tail=head;
+            tail=n;
         }else{
             tail->next=n;
             tail=n;
@@ -30,39 +29,36 @@ node* takeinput(){
     }
     return head;
 }
-int length(node *head){
-    int count=0;
+
+void print(node *head){
     while(head!=NULL){
-        count++;
+        cout << head->data <<' ';
+        head=head->next;
+    }
+    cout << endl;
+}
+
+int countPrimeNum(node *head){
+    int count=0;
+    bool check=true;
+    while(head!=NULL){
+        int d=head->data;
+        for(int i=2; i<d; i++){
+            if(d%i != 0){
+                check=true;
+            }else{
+                check=false;
+                break;
+            }
+        }
+        if(check==true) count++;
         head=head->next;
     }
     return count;
-}
-void printIthNode(node *head, int i){
-    int count=0;
-    while(head!=NULL){
-        if(i==count){
-            cout << head->data <<endl;
-        }
-        count++;
-        head=head->next;
-    }
-}
-void print(node *head){
-    node *temp=head;
-    while(temp!=NULL){
-        cout << temp->data <<' ';
-        temp=temp->next;
-    }
-    cout << endl;
 }
 
 int main(){
     node *head=takeinput();
     print(head);
-    cout << length(head) << endl;
-
-    int i;
-    cin >>i;
-    printIthNode(head,i);
+    cout << countPrimeNum(head);
 }

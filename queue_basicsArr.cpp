@@ -14,8 +14,12 @@ class queueArr{
         n=0;
         capacity=size;
     }
-    int size() return n;
-    bool isEmpty() return n==0;
+    int size(){
+        return n;
+    }
+    bool isEmpty(){
+        return n==0;
+    }
     void enqueue(T element){
         if(n==capacity){
             T *newData=new T[2*capacity];

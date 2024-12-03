@@ -9,13 +9,136 @@
 #include<queue>
 #include<vector>
 #include<unordered_map>
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main() {
+int main(){
+    int n;
+    cin >> n;
+    int a[n], index=0;
+    for(int i=2; i<n; i++){
+        for(int j=2; j<i; j++){
+            if(i%j!=0){
+                a[index]=i;
+                index++;
+                break;
+            }
+        }
+    }
+    for(int i=0; i<index; i++){
+        cout << a[i] << ' ';
+    }
 }
 
+// diplay element of queue using linked list
 
+/*
+class hashTable1{
+    public:
+    vector<pair<int,int>> table;
+
+    hashTable1(){
+        for(int i=0; i<100; i++){
+            table[i].first=0;
+            table[i].second=0;
+        }
+    }
+
+    int hasFuction(int key){
+        return key%100;
+    }
+
+    void insert(int key, int value){
+        int index=hasFuction(key);
+        table[index].first=key;
+        table[index].second=value;
+    }
+
+    int search(int key){
+        int index=hasFuction(key);
+        if (table[index].first == key) return table[index].second;
+        else return -1;
+    }
+
+
+};
+
+int main() {
+    hashTable1 h;
+    h.insert(20,200);
+    h.insert(30,300);
+    h.insert(40,400);
+    h.insert(50,500);
+    h.insert(60,600);
+
+    cout << h.search(20) << endl;
+    cout << h.search(10) << endl;
+    cout << h.search(50) << endl;
+}
+*/
+
+
+/*
+// define a function to create a max heap from an array of numbers
+void create_max_heap(int nums[], int n) {
+    for (int i = n/2 - 1; i >= 0; i--) {
+        int largest = i;
+        int left = 2*i + 1;
+        int right = 2*i + 2;
+
+        if (left < n && nums[left] > nums[largest]) {
+            largest = left;
+        }
+
+        if (right < n && nums[right] > nums[largest]) {
+            largest = right;
+        }
+
+        if (largest != i) {
+            swap(nums[i], nums[largest]);
+            create_max_heap(nums, n);
+        }
+    }
+}
+
+// define a function to perform heap sort on an array of numbers
+void heap_sort(int nums[], int n) {
+    create_max_heap(nums, n);
+
+    for (int i = n-1; i >= 0; i--) {
+        swap(nums[0], nums[i]);
+        create_max_heap(nums, i);
+    }
+}
+
+int main() {
+    // take input from user for ten numbers
+    int nums[10];
+    for (int i = 0; i < 10; i++) {
+        cout << "Enter number " << i+1 << ": ";
+        cin >> nums[i];
+    }
+
+    // create a max heap from the given numbers
+    create_max_heap(nums, 10);
+
+    // print the max heap
+    cout << "Max Heap:" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << nums[i] << " ";
+    }
+    cout << endl;
+
+    // sort the numbers using heap sort
+    heap_sort(nums, 10);
+
+    // print the sorted numbers
+    cout << "Sorted numbers using Heap Sort:" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << nums[i] << " ";
+    }
+}
+*/
 
     /*
     int a=5.7, b=8.2;
